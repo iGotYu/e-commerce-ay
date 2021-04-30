@@ -3,7 +3,11 @@ const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
 
-router.use((req, res) => {
+router.use("/", (req, res) => {
+  res.json({hello: true})
+})
+
+router.use("*",(req, res) => {
   res.send("<h1>Wrong Route!</h1>")
 });
 
